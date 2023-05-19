@@ -1,12 +1,21 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
+const Text = () => {
+  const searchParams = useSearchParams();
+
+  const q = searchParams.get("q");
+
+  return (
+    <h1 className="text-4xl font-bold text-center">
+      {q ? q : "Quer ficar comigo?"}
+    </h1>
+  );
+};
+
 export default function Home() {
-  const router = useRouter();
-  // const { q } = router.;
-  const q = null;
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   function randomInteger(min: number, max: number) {
@@ -19,9 +28,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 gap-10">
-      <h1 className="text-4xl font-bold text-center">
-        {q ? q : "Quer ficar comigo?"}
-      </h1>
+      <Text />
 
       <div className="flex flex-row gap-2">
         <button
