@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   const handleClick = () => {
-    setPosition({ x: randomInteger(100, 300), y: randomInteger(200, 400) });
+    setPosition({ x: randomInteger(50, 100), y: randomInteger(70, 90) });
   };
 
   return (
